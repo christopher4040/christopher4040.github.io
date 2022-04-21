@@ -13,11 +13,10 @@ function show(section) {
         projectsSection.style.display = 'block';
     }    
 }
-
-var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: '#navbar'
-  })
-$(document).ready(function(){
+$(document).ready(function() {
+    $.get("/navbar.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+    });
     $(".nav .nav-link").on("click", function(){
         $(".nav").find(".active").removeClass("active");
         $(this).addClass("active");
@@ -26,11 +25,7 @@ $(document).ready(function(){
     var activeTab = localStorage.getItem('activeTab');
     if(activeTab){
         $(".nav").find(".active").removeClass("active");
-        $(`[href^=${activeTab}]`).addClass("active")
-
-        
-        // $(activeTab).addClass("active");
-        // $('#myTab a[href="' + activeTab + '"]').tab('show');
+        $(`[href^=${activeTab}]`).addClass("active");
     }
 });
 
