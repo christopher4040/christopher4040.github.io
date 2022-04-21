@@ -14,9 +14,9 @@ function show(section) {
     }    
 }
 $(document).ready(function() {
-    $.get("/navbar.html", function(data){
-        $("#nav-placeholder").replaceWith(data);
-    });
+    $(function() {
+        $('nav-placeholder').load('navbar.html')
+    })
     $(".nav .nav-link").on("click", function(){
         $(".nav").find(".active").removeClass("active");
         $(this).addClass("active");
