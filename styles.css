@@ -28,15 +28,12 @@ main {
 
 #abstract-1 {
   width: inherit;
-  max-height: 620px;
+  max-height: 550px;
 }
 
 @media screen and (max-width: 991px) {
   .videoWrapper {
     padding-bottom: 56.25%;
-  }
-  #my-picture {
-    visibility: hidden;
   }
 }
 
@@ -91,3 +88,16 @@ a {
 .card-img-top {
   padding: 10px;
 }
+
+#btn-contact-me {
+  background-color: #5271ff;
+}
+
+.violet {
+  color: #5271ff;
+}
+
+.card-contact-me {
+  min-width: 300px;
+}
+
