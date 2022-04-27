@@ -72,6 +72,7 @@ iframe {
 
 #about {
   background: #f6f6f8;
+  border-radius: 15px;
 }
 
 a {
@@ -87,6 +88,8 @@ a {
 
 .card-img-top {
   padding: 10px;
+  background:#f6f6f8;
+  border-radius: 15px;
 }
 
 #btn-contact-me {
