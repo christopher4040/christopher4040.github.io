@@ -32,7 +32,7 @@ main {
   } */
 }
 
-@keyframes morph {
+/* @keyframes morph {
   0%,
   100% {
     border-radius: 
@@ -49,7 +49,7 @@ main {
       100% 60% 60% 100% /
       100% 100% 60% 60%;
   }
-}
+} */
 
 #my-picture {
   border-radius: 50%;
