@@ -8,23 +8,6 @@ main {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.videoWrapper {
-  width: 100%;
-  height: 0;
-  padding-bottom: 30.25%;
-  position: relative;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  max-height: 530px;
-  padding: 2%;
-}
-
 #abstract-1 {
   width: -webkit-fill-available;
   max-height: 550px;
@@ -42,12 +25,11 @@ main {
     padding-right: 1rem;
     padding-left: 1rem;
   }
-  #my-picture {
+  /* #my-picture {
     background: #c1c1ff;
     margin-left: 1rem;
     margin-right: 1rem;
-    animation: morph 3.5s linear infinite;
-  }
+  } */
 }
 
 @keyframes morph {
@@ -69,17 +51,22 @@ main {
   }
 }
 
-img {
-  animation: morph 3.5s linear infinite;
+#my-picture {
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+  width: 80%;
+  /* animation: morph 10.5s linear infinite; */
+}
+
+#abstract-image {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 
 .section {
-  padding-top: 5em;
-  padding-bottom: 5em;
-}
-
-.section-content {
-  padding-top: 30px;
+  height: 100vh;
 }
 
 .navbar-toggler {
@@ -94,9 +81,16 @@ iframe {
   border-radius: 30px;
 }
 
+#home {
+  justify-content: center;
+}
+
+#name-photo-row {
+  align-items: center;
+}
+
 #about {
   background: #f6f6f8;
-  border-radius: 15px;
 }
 
 a {
@@ -144,7 +138,7 @@ a {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(82, 113, 255, 0.1);
+  background: rgba(82, 113, 255, 0.15);
   animation: animate 25s linear infinite;
   bottom: -150px;
   
@@ -226,6 +220,14 @@ a {
   animation-duration: 11s;
 }
 
+.circles li:nth-child(11){
+  left: 15%;
+  width: 95px;
+  height: 95px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
 @keyframes animate {
 
   0%{
@@ -239,3 +241,23 @@ a {
       opacity: 0;
       border-radius: 50%;
   }
+
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+}
+
+@supports (-webkit-backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) or
+  (backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
+  .navbar-b.navbar-reduce {
+    transition: all 0.5s ease-in-out;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  }
+}
