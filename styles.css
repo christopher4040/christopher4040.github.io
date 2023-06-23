@@ -1,3 +1,7 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
 main {
   display: flex;
   flex-wrap: nowrap;
@@ -14,23 +18,19 @@ main {
   z-index: 999;
 }
 
-@media screen and (max-width: 991px) {
-  .videoWrapper {
-    padding-bottom: 56.25%;
-  }
-}
-
 @media screen and (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1rem;
     padding-left: 1rem;
   }
-  /* #my-picture {
-    background: #c1c1ff;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  } */
 }
+
+@media screen and (max-width: 414px) {
+  .image-col {
+    max-width: 500px;
+  }
+}
+
 
 /* @keyframes morph {
   0%,
@@ -67,6 +67,8 @@ main {
 
 .section {
   height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .navbar-toggler {
@@ -96,6 +98,7 @@ iframe {
 a {
   color: #222222;
   text-decoration: none;
+  z-index: 999;
 }
 
 .card {
