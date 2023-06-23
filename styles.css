@@ -104,6 +104,10 @@ a {
   margin: auto;
 }
 
+.row {
+  margin: 0;
+}
+
 .card-img-top {
   padding: 10px;
   background:#f6f6f8;
