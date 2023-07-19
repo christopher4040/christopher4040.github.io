@@ -29,13 +29,14 @@ main {
   }
 }
 
-
-
 #my-picture {
   border-radius: 50%;
   z-index: 1;
   position: relative;
   width: 80%;
+  background-color: rgba(194, 194, 194, 0.1);
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
   /* animation: morph 10.5s linear infinite; */
 }
 
@@ -90,6 +91,7 @@ a {
   border-radius: 15px;
   max-width: 35rem;
   margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -222,19 +224,19 @@ a {
 }
 
 @keyframes animate {
-
+  
   0%{
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
   }
-
+  
   100%{
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
   }
-
+  
 }
 
 .navbar {
@@ -244,7 +246,7 @@ a {
 }
 
 @supports (-webkit-backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) or
-  (backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
+(backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
   .navbar-b.navbar-reduce {
     transition: all 0.5s ease-in-out;
     padding-top: 15px;
@@ -262,37 +264,63 @@ a {
 }
 
 .mouse {
-	width: 30px;
-	height: 50px;
-	border: 3px solid #333;
-	border-radius: 60px;
-	position: relative;
-	&::before {
-		content: '';
-		width:8px;
-		height: 8px;
-		position: absolute;
-		top: 10px;
-		left: 50%;
-		transform: translateX(-50%);
-		background-color: #333;
-		border-radius: 50%;
-		opacity: 1;
-		animation: wheel 2s infinite;
-		-webkit-animation: wheel 2s infinite;
-	}
+  width: 30px;
+  height: 50px;
+  border: 3px solid #333;
+  border-radius: 60px;
+  position: relative;
+  &::before {
+    content: '';
+    width:8px;
+    height: 8px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+  }
 }
 
 @keyframes wheel {
-	to {
-		opacity: 0;
-		top: 30px;
-	}
+  to {
+    opacity: 0;
+    top: 30px;
+  }
 }
 
 @-webkit-keyframes wheel {
-	to {
-		opacity: 0;
-		top: 30px;
-	}
+  to {
+    opacity: 0;
+    top: 30px;
+  }
+}
+
+.scroll-container {
+  margin-top: 40px;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content {
+  position: absolute;
+  animation: scroll 15s linear infinite;
+  overflow: hidden;
+  display: inline-flex;
+  gap: 5em;
+  white-space: nowrap;
+  padding: 30px;
+}
+
+@keyframes scroll {
+  0% { right: -400px; }
+  100% { right: 100%; }
+}
+
+.tools-div {
+  display: contents;
 }
